@@ -19,3 +19,4 @@ class Song < ActiveRecord::Base
       new_song = Song.new
   end
 end
+end
