@@ -16,6 +16,7 @@ class Genre < ActiveRecord::Base
   end
 
   def all_artist_names
-    # return an array of strings containing every musician's name
+    # return an array of strings containing every musician's name 
+    self.artist_count.uniq 
   end
 end
