@@ -17,10 +17,10 @@ class Artist < ActiveRecord::Base
   end
 
   def genre_count
-    
-    self.songs.all.map do |song|
-      song.genre.uniq
+    new_array = []
+    self.songs.all.each do |song|
+      new_array << song.genre
     end
-    
+    new_array.uniq.size
   end
 end
