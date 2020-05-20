@@ -2,6 +2,7 @@ class Artist < ActiveRecord::Base
   has_many :songs
   has_many :genres, through: :songs
   
+  
   def get_first_song
     self.songs.first
   end
@@ -16,8 +17,9 @@ class Artist < ActiveRecord::Base
   end
 
   def genre_count
-    self.songs.all map do |song|
-      song.genre.uniq
+    
+    self.songs.all.map do |song|
+      song.genre
     end
     
   end
